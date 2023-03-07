@@ -1,0 +1,23 @@
+<!-- Main content -->
+<div class="container h-[100vh] flex flex-col justify-center">
+  <!-- log img -->
+  <div class="flex justify-center">
+    <img src="assets/images/red_cross.svg"
+         alt="404"
+         class="w-1/2 h-auto
+                animate-heartBeat" />
+  </div>
+  <!-- not found msg -->
+  <div class="container mx-auto text-center mt-10">
+    <h2 class="text-gray-800 text-4xl font-bold mb-4">
+      Oops! The requested page cannot be found.
+    </h2>
+  </div>
+  <!-- back home button  -->
+  <div class="container text-center mt-10">
+    <a [routerLink]="['/']"
+       class="btn primary">
+      Back to Home
+    </a>
+  </div>
+</div>

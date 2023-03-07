@@ -1,0 +1,18 @@
+<div class="flex h-screen w-full overflow-hidden">
+  <!-- Sidebar -->
+  <dashboard-sidebar></dashboard-sidebar>
+
+  <div class="grid flex-grow content-start bg-gray-100 dark:bg-night-800">
+    <!-- Header -->
+    <dashboard-navbar></dashboard-navbar>
+    <!-- main content -->
+    <div
+      class="scrollbar-thumb-rounded scrollbar-track-rounded overflow-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-100 dark:scrollbar-thumb-night-700 dark:scrollbar-track-night-800">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- footer -->
+    <!-- <dashboard-footer></dashboard-footer> -->
+
+  </div>
+</div>

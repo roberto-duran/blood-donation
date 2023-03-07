@@ -1,0 +1,40 @@
+<div class="p-6 space-y-4">
+  <h1 class="text-xl text-center font-bold text-gray-700 md:text-2xl">
+    {{ title }}
+  </h1>
+  <form [formGroup]="registerForm" (ngSubmit)="register()"
+    class="flex flex-col justify-center items-center w-full md:w-[30rem] mx-auto
+  space-y-4 md:space-y-6" action="#">
+    <shared-input [control]="name" class="w-full"
+                  placeholder="Enter Name"></shared-input>
+
+    <shared-input [control]="email" class="w-full"
+                  placeholder="Enter Email" type="email"></shared-input>
+
+    <shared-input [control]="age" class="w-full"
+                  placeholder="Enter Age" type="number"></shared-input>
+
+    <shared-input [control]="phone" class="w-full"
+                  placeholder="Enter Phone Number" format="(000) 000-0000"></shared-input>
+
+    <shared-input [control]="password" class="w-full"
+                  placeholder="Password" type="password"></shared-input>
+
+    <shared-input [control]="confirm_password" class="w-full"
+                  type="password"
+                  placeholder="Confirm Password">
+    </shared-input>
+
+    <div class="flex justify-center my-10">
+      <button type="submit" class="btn primary w-60"
+              [disabled]="registerForm.invalid || inSubmission">SIGN UP</button>
+    </div>
+    <p class="text-sm font-light text-gray-500">
+      Already have an Account?
+      <a [routerLink]="['/auth/sign-in']"
+         class="font-medium text-primary-600 hover:underline">
+        Sign in
+      </a>
+    </p>
+  </form>
+</div>
