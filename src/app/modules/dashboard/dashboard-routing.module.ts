@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard'
 import {DashboardComponent} from "./dashboard.component";
-
-const redirectUnauthorizedToHome = () => redirectUnauthorizedTo('/')
+import {ListComponent} from "./pages/user/list/list.component";
+import {SettingsComponent} from "./pages/user/settings/settings.component";
 const routes: Routes = [
-  {
-    path: 'dashboard',
+  {path: '',
     component: DashboardComponent,
-    data: {
-      authOnly: true,
-      authGuardPipe: redirectUnauthorizedToHome
-    },
-    canActivate: [AngularFireAuthGuard]
-  },
+    children: [
+      {path: '', redirectTo: 'list', pathMatch: 'full'},
+      {path: 'list', component: ListComponent},
+      {path: 'settings', component: SettingsComponent},
+      {path: '**', redirectTo: 'list', pathMatch: 'full'}
+    ]
+  }
 ];
 
 @NgModule({
